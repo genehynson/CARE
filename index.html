@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>CARE</title>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="https://carpetrecovery.org/wp-content/themes/care/img/icons/touch.png" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body id="page1" onload='loginAs();'>
+
+<div class = "wrapper">
+	<header role="banner">
+		<div class="logo">
+			<a href="https://carpetrecovery.org">
+			<img src="https://carpetrecovery.org/wp-content/themes/care/img/logo.png" alt="Logo" class="logo-img">
+			</a>
+		</div>
+		<div class="header-tag">
+			<p>Developing Market Based<br>
+			Solutions for the Recycling &amp; Reuse<br>
+			of Post-Consumer Carpet
+			</p>
+		</div>
+		<nav class="nav" role="navigation">
+			<ul id="tabs">
+				<li class="active-tab"><a href="index.html">Login</a></li>
+				<li><a href="register.htm">Register</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content">
+		<br>
+		Welcome to CARE!
+		<hr>
+		<br>
+
+		Log in as:
+		<br>
+		<br>
+		<a id = 'user_Processor' onclick="loginAs('processor');" title="what type of user are you?"><span id="processor-checkbox" class="glyphicon glyphicon-check"></span> Processor</a>
+		<a id = 'user_Administrator' onclick="loginAs('administrator');" title="what type of user are you?"><span id="admin-checkbox" class="glyphicon glyphicon-unchecked"></span> Administrator</a>
+		<br>
+		<br>
+		<div id='login-forms'>
+			<!-- processor Login -->
+			<div id='processor-login' style='display:none;'>
+				<script type="text/javascript" src="https://b5.caspio.com/scripts/e1.js"></script>
+				<script type="text/javascript">try{f_cbload("edda3000c756dcd6381b4b1688bf","https:");}catch(v_e){;}</script>
+				<div id="cxkg"><a href="https://b5.caspio.com/dp.asp?AppKey=edda3000c756dcd6381b4b1688bf">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
+			</div>
+
+			<!-- admin Login -->
+			<div id='admin-login' style='display:none;'>
+				<script type="text/javascript" src="https://b5.caspio.com/scripts/e1.js"></script>
+				<script type="text/javascript">try{f_cbload("edda3000daf800161d36446cb5c7","https:");}catch(v_e){;}</script>
+				<div id="cxkg"><a href="https://b5.caspio.com/dp.asp?AppKey=edda3000daf800161d36446cb5c7">Click here</a> to load this Caspio <a href="http://www.caspio.com" title="Online Database">Online Database</a>.</div>
+			</div>
+			<a href="password.htm">Forgot your password?</a>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+document.getElementById('processor-login').style.display = 'block';
+document.getElementById('user_Processor').style.backgroundColor = '#bfd908';
+/*document.getElementById('user_Processor').style.backgroundImage = "url('../img/checkmark.PNG')";
+document.getElementById('user_Processor').style.backgroundPosition = "left";
+document.getElementById('user_Processor').style.backgroundRepeat = "no-repeat";
+document.getElementById('admin-login').style.display = 'none';*/
+document.getElementById('user_Administrator').style.background = 'none';
+
+
+function loginAs(user) {
+
+
+	if(user == 'processor') {
+	  document.getElementById('processor-checkbox').className = 'glyphicon glyphicon-check';
+	  document.getElementById('admin-checkbox').className = 'glyphicon glyphicon-unchecked';
+	  document.getElementById('processor-login').style.display = 'block';
+	  document.getElementById('admin-login').style.display = 'none';
+	  document.getElementById('user_Processor').style.backgroundColor = '#bfd908';
+	  /*document.getElementById('user_Processor').style.backgroundImage = "url('../img/checkmark.PNG')";
+	  document.getElementById('user_Processor').style.backgroundPosition = "left";
+	  document.getElementById('user_Processor').style.backgroundRepeat = "no-repeat";*/
+	  document.getElementById('user_Administrator').style.background = 'none';
+	  //alert('processor');
+	} else if(user == 'administrator') {
+      document.getElementById('processor-checkbox').className = 'glyphicon glyphicon-unchecked';
+	  document.getElementById('admin-checkbox').className = 'glyphicon glyphicon-check';
+
+	  document.getElementById('processor-login').style.display = 'none';
+	  document.getElementById('admin-login').style.display = 'block';
+	  document.getElementById('user_Processor').style.background = 'none';
+	  document.getElementById('user_Administrator').style.backgroundColor = '#bfd908';
+	  /*document.getElementById('user_Administrator').style.backgroundImage = "url('../img/checkmark.PNG')";
+	  document.getElementById('user_Administrator').style.backgroundPosition = "left";
+	  document.getElementById('user_Administrator').style.backgroundRepeat = "no-repeat";*/
+	  //alert('admin');
+	}
+}
+</script>
+</body>
+</html>
